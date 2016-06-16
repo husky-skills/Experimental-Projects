@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           controllers.Application.index()
+GET     /list                    controllers.StudentController.listStudents()
+GET 	/another                 controllers.StudentController.addStudent()
+GET     /add/				   controllers.StudentController.addStudent()
+
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /webjars/*file              controllers.WebJarAssets.at(file)
+
+
