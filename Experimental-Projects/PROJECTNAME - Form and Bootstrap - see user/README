@@ -1,11 +1,9 @@
-Ovo je Crud backend aplikacija 
-=====================================
 
-U izgradnji ove Aplikacije se koristi Java jezik i Scala za Templejte
+The activator project name is "PROJECTNAME" 
 
-MVC aplikacija 
-MOdel koji koristimo je se naziva Product 
-a propracen je Products controllerom 
-Bootstrap je koriscen za stiliziranje 
+In this project play Form and Bootstrap is implemented. 
 
-Metodom list prikazeujemo sve proizvode 
+The User example is very simple to understand.
+
+"routes" file can be checked for more easy navigation in project.
+
