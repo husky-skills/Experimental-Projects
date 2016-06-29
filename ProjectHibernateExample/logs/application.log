@@ -1,0 +1,354 @@
+2016-06-29 10:12:06,967 [INFO] from play.core.server.NettyServer in pool-5-thread-6 - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+2016-06-29 10:13:39,916 [WARN] from application in ForkJoinPool-1-worker-1 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2016-06-29 10:13:40,711 [INFO] from application in ForkJoinPool-1-worker-1 - Creating Pool for datasource 'default'
+2016-06-29 10:13:41,354 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-1 - datasource [default] bound to JNDI as DefaultDS
+2016-06-29 10:13:41,370 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-1 - Database [default] connected at jdbc:postgresql://localhost:5432/postgres
+2016-06-29 10:13:43,173 [WARN] from org.hibernate.ejb.HibernatePersistence in ForkJoinPool-1-worker-1 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:13:43,176 [WARN] from org.hibernate.ejb.HibernatePersistence in ForkJoinPool-1-worker-1 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:13:43,177 [WARN] from org.hibernate.ejb.HibernatePersistence in ForkJoinPool-1-worker-1 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:13:43,942 [ERROR] from application in netty-event-loop-3 - 
+
+! @70hb82pj1 - Internal server error, for (GET) [/home] ->
+ 
+play.api.UnexpectedException: Unexpected exception[ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, javax.persistence.PersistenceException: Unable to locate persistence units
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:39)
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.class(DefaultJPAApi.java:34)
+  while locating play.db.jpa.DefaultJPAApi$JPAApiProvider
+  while locating play.db.jpa.JPAApi
+    for parameter 0 at controllers.HibernateTest.<init>(HibernateTest.java:18)
+  while locating controllers.HibernateTest
+    for parameter 2 at router.Routes.<init>(Routes.scala:36)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for parameter 0 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:200)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for parameter 4 at play.api.DefaultApplication.<init>(Application.scala:221)
+  at play.api.DefaultApplication.class(Application.scala:221)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error]
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:170)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:126)
+	at scala.Option.map(Option.scala:146)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:126)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:124)
+	at scala.util.Success.flatMap(Try.scala:231)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:124)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: com.google.inject.ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, javax.persistence.PersistenceException: Unable to locate persistence units
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:39)
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.class(DefaultJPAApi.java:34)
+  while locating play.db.jpa.DefaultJPAApi$JPAApiProvider
+  while locating play.db.jpa.JPAApi
+    for parameter 0 at controllers.HibernateTest.<init>(HibernateTest.java:18)
+  while locating controllers.HibernateTest
+    for parameter 2 at router.Routes.<init>(Routes.scala:36)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for parameter 0 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:200)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for parameter 4 at play.api.DefaultApplication.<init>(Application.scala:221)
+  at play.api.DefaultApplication.class(Application.scala:221)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1025)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:405)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:400)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:123)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:158)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:155)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:155)
+	... 14 common frames omitted
+Caused by: javax.persistence.PersistenceException: Unable to locate persistence units
+	at org.hibernate.jpa.HibernatePersistenceProvider.getEntityManagerFactoryBuilderOrNull(HibernatePersistenceProvider.java:101)
+	at org.hibernate.ejb.HibernatePersistence.getEntityManagerFactoryBuilderOrNull(HibernatePersistence.java:93)
+	at org.hibernate.jpa.HibernatePersistenceProvider.getEntityManagerFactoryBuilderOrNull(HibernatePersistenceProvider.java:88)
+	at org.hibernate.ejb.HibernatePersistence.getEntityManagerFactoryBuilderOrNull(HibernatePersistence.java:101)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:69)
+	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:54)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:39)
+	at play.db.jpa.DefaultJPAApi.lambda$start$1(DefaultJPAApi.java:60)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at play.db.jpa.DefaultJPAApi.start(DefaultJPAApi.java:59)
+	at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:46)
+	at play.db.jpa.DefaultJPAApi$JPAApiProvider$$FastClassByGuice$$dcd4cdbd.newInstance(<generated>)
+	at com.google.inject.internal.cglib.reflect.$FastConstructor.newInstance(FastConstructor.java:40)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:61)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:105)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:61)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:405)
+	at play.api.inject.RoutesProvider$$anonfun$2.apply(BuiltinModule.scala:82)
+	at play.api.inject.RoutesProvider$$anonfun$2.apply(BuiltinModule.scala:82)
+	at scala.Option.fold(Option.scala:158)
+	at play.api.inject.RoutesProvider.get$lzycompute(BuiltinModule.scala:82)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:78)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:77)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012)
+	... 23 common frames omitted
+Caused by: javax.persistence.PersistenceException: Unexpected error parsing [file:/C:/Users/Mahendra/ProjectHibernateExample/target/scala-2.11/classes/META-INF/persistence.xml]
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.loadUrl(PersistenceXmlParser.java:314)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.parsePersistenceXml(PersistenceXmlParser.java:114)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.doResolve(PersistenceXmlParser.java:104)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.locatePersistenceUnits(PersistenceXmlParser.java:86)
+	at org.hibernate.jpa.HibernatePersistenceProvider.getEntityManagerFactoryBuilderOrNull(HibernatePersistenceProvider.java:97)
+	... 91 common frames omitted
+Caused by: org.xml.sax.SAXParseException: The value of attribute "value" associated with an element type "property" must not contain the '<' character.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.loadUrl(PersistenceXmlParser.java:309)
+	... 95 common frames omitted
+2016-06-29 10:13:43,946 [ERROR] from application in netty-event-loop-4 - 
+
+! @70hb82pj1 - Internal server error, for (GET) [/home] ->
+ 
+play.api.UnexpectedException: Unexpected exception[ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, javax.persistence.PersistenceException: Unable to locate persistence units
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:39)
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.class(DefaultJPAApi.java:34)
+  while locating play.db.jpa.DefaultJPAApi$JPAApiProvider
+  while locating play.db.jpa.JPAApi
+    for parameter 0 at controllers.HibernateTest.<init>(HibernateTest.java:18)
+  while locating controllers.HibernateTest
+    for parameter 2 at router.Routes.<init>(Routes.scala:36)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for parameter 0 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:200)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for parameter 4 at play.api.DefaultApplication.<init>(Application.scala:221)
+  at play.api.DefaultApplication.class(Application.scala:221)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error]
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:170)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:126)
+	at scala.Option.map(Option.scala:146)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:126)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1.apply(DevServerStart.scala:124)
+	at scala.util.Success.flatMap(Try.scala:231)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:124)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1.apply(DevServerStart.scala:116)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1402)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: com.google.inject.ProvisionException: Unable to provision, see the following errors:
+
+1) Error injecting constructor, javax.persistence.PersistenceException: Unable to locate persistence units
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:39)
+  at play.db.jpa.DefaultJPAApi$JPAApiProvider.class(DefaultJPAApi.java:34)
+  while locating play.db.jpa.DefaultJPAApi$JPAApiProvider
+  while locating play.db.jpa.JPAApi
+    for parameter 0 at controllers.HibernateTest.<init>(HibernateTest.java:18)
+  while locating controllers.HibernateTest
+    for parameter 2 at router.Routes.<init>(Routes.scala:36)
+  while locating router.Routes
+  while locating play.api.inject.RoutesProvider
+  while locating play.api.routing.Router
+    for parameter 0 at play.api.http.JavaCompatibleHttpRequestHandler.<init>(HttpRequestHandler.scala:200)
+  while locating play.api.http.JavaCompatibleHttpRequestHandler
+  while locating play.api.http.HttpRequestHandler
+    for parameter 4 at play.api.DefaultApplication.<init>(Application.scala:221)
+  at play.api.DefaultApplication.class(Application.scala:221)
+  while locating play.api.DefaultApplication
+  while locating play.api.Application
+
+1 error
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1025)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:405)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:400)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:123)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:158)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1$$anonfun$2.apply(DevServerStart.scala:155)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21)
+	at play.core.server.DevServerStart$$anonfun$mainDev$1$$anon$1$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(DevServerStart.scala:155)
+	... 14 common frames omitted
+Caused by: javax.persistence.PersistenceException: Unable to locate persistence units
+	at org.hibernate.jpa.HibernatePersistenceProvider.getEntityManagerFactoryBuilderOrNull(HibernatePersistenceProvider.java:101)
+	at org.hibernate.ejb.HibernatePersistence.getEntityManagerFactoryBuilderOrNull(HibernatePersistence.java:93)
+	at org.hibernate.jpa.HibernatePersistenceProvider.getEntityManagerFactoryBuilderOrNull(HibernatePersistenceProvider.java:88)
+	at org.hibernate.ejb.HibernatePersistence.getEntityManagerFactoryBuilderOrNull(HibernatePersistence.java:101)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:69)
+	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:54)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:55)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:39)
+	at play.db.jpa.DefaultJPAApi.lambda$start$1(DefaultJPAApi.java:60)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at play.db.jpa.DefaultJPAApi.start(DefaultJPAApi.java:59)
+	at play.db.jpa.DefaultJPAApi$JPAApiProvider.<init>(DefaultJPAApi.java:46)
+	at play.db.jpa.DefaultJPAApi$JPAApiProvider$$FastClassByGuice$$dcd4cdbd.newInstance(<generated>)
+	at com.google.inject.internal.cglib.reflect.$FastConstructor.newInstance(FastConstructor.java:40)
+	at com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance(DefaultConstructionProxyFactory.java:61)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:105)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:61)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012)
+	at com.google.inject.internal.InjectorImpl.getInstance(InjectorImpl.java:1051)
+	at play.api.inject.guice.GuiceInjector.instanceOf(GuiceInjectorBuilder.scala:405)
+	at play.api.inject.RoutesProvider$$anonfun$2.apply(BuiltinModule.scala:82)
+	at play.api.inject.RoutesProvider$$anonfun$2.apply(BuiltinModule.scala:82)
+	at scala.Option.fold(Option.scala:158)
+	at play.api.inject.RoutesProvider.get$lzycompute(BuiltinModule.scala:82)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:78)
+	at play.api.inject.RoutesProvider.get(BuiltinModule.scala:77)
+	at com.google.inject.internal.ProviderInternalFactory.provision(ProviderInternalFactory.java:81)
+	at com.google.inject.internal.BoundProviderFactory.provision(BoundProviderFactory.java:72)
+	at com.google.inject.internal.ProviderInternalFactory.circularGet(ProviderInternalFactory.java:61)
+	at com.google.inject.internal.BoundProviderFactory.get(BoundProviderFactory.java:62)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.SingleParameterInjector.inject(SingleParameterInjector.java:38)
+	at com.google.inject.internal.SingleParameterInjector.getAll(SingleParameterInjector.java:62)
+	at com.google.inject.internal.ConstructorInjector.provision(ConstructorInjector.java:104)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:85)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:267)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1103)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.internal.SingletonScope$1.get(SingletonScope.java:145)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:41)
+	at com.google.inject.internal.FactoryProxy.get(FactoryProxy.java:56)
+	at com.google.inject.internal.InjectorImpl$2$1.call(InjectorImpl.java:1016)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1092)
+	at com.google.inject.internal.InjectorImpl$2.get(InjectorImpl.java:1012)
+	... 23 common frames omitted
+Caused by: javax.persistence.PersistenceException: Unexpected error parsing [file:/C:/Users/Mahendra/ProjectHibernateExample/target/scala-2.11/classes/META-INF/persistence.xml]
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.loadUrl(PersistenceXmlParser.java:314)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.parsePersistenceXml(PersistenceXmlParser.java:114)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.doResolve(PersistenceXmlParser.java:104)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.locatePersistenceUnits(PersistenceXmlParser.java:86)
+	at org.hibernate.jpa.HibernatePersistenceProvider.getEntityManagerFactoryBuilderOrNull(HibernatePersistenceProvider.java:97)
+	... 91 common frames omitted
+Caused by: org.xml.sax.SAXParseException: The value of attribute "value" associated with an element type "property" must not contain the '<' character.
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.hibernate.jpa.boot.internal.PersistenceXmlParser.loadUrl(PersistenceXmlParser.java:309)
+	... 95 common frames omitted
+2016-06-29 10:15:38,440 [WARN] from application in ForkJoinPool-1-worker-2 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2016-06-29 10:15:38,530 [INFO] from application in ForkJoinPool-1-worker-2 - Creating Pool for datasource 'default'
+2016-06-29 10:15:38,561 [INFO] from play.api.db.HikariCPConnectionPool in ForkJoinPool-1-worker-2 - datasource [default] bound to JNDI as DefaultDS
+2016-06-29 10:15:38,562 [INFO] from play.api.db.DefaultDBApi in ForkJoinPool-1-worker-2 - Database [default] connected at jdbc:postgresql://localhost:5432/postgres
+2016-06-29 10:15:38,606 [WARN] from org.hibernate.ejb.HibernatePersistence in ForkJoinPool-1-worker-2 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:15:38,607 [WARN] from org.hibernate.ejb.HibernatePersistence in ForkJoinPool-1-worker-2 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:15:38,608 [WARN] from org.hibernate.ejb.HibernatePersistence in ForkJoinPool-1-worker-2 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:15:51,388 [INFO] from play.api.Play in ForkJoinPool-1-worker-2 - Application started (Dev)
+2016-06-29 10:15:52,224 [INFO] from application in application-akka.actor.default-dispatcher-5 - ***************** Hi Mahendra ***************************
+2016-06-29 10:15:52,368 [INFO] from application in application-akka.actor.default-dispatcher-5 - Got userDetail: 10 Mahendra Shinde 
+2016-06-29 10:17:55,466 [INFO] from application in application-akka.actor.default-dispatcher-7 - Shutting down connection pool.
+2016-06-29 10:17:55,537 [WARN] from application in application-akka.actor.default-dispatcher-7 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2016-06-29 10:17:55,609 [INFO] from application in application-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2016-06-29 10:17:55,648 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-7 - datasource [default] bound to JNDI as DefaultDS
+2016-06-29 10:17:55,649 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:postgresql://localhost:5432/postgres
+2016-06-29 10:17:55,695 [WARN] from org.hibernate.ejb.HibernatePersistence in application-akka.actor.default-dispatcher-7 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:17:55,696 [WARN] from org.hibernate.ejb.HibernatePersistence in application-akka.actor.default-dispatcher-7 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:17:55,698 [WARN] from org.hibernate.ejb.HibernatePersistence in application-akka.actor.default-dispatcher-7 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:17:56,484 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-7 - Application started (Dev)
+2016-06-29 10:17:56,497 [INFO] from application in application-akka.actor.default-dispatcher-6 - ***************** Hi Mahendra ***************************
+2016-06-29 10:17:56,553 [INFO] from application in application-akka.actor.default-dispatcher-6 - Got userDetail: 10 Mahendra Shinde 
+2016-06-29 10:20:47,683 [INFO] from application in application-akka.actor.default-dispatcher-2 - Shutting down connection pool.
+2016-06-29 10:20:47,764 [WARN] from application in application-akka.actor.default-dispatcher-2 - Logger configuration in conf files is deprecated and has no effect. Use a logback configuration file instead.
+2016-06-29 10:20:47,867 [INFO] from application in application-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2016-06-29 10:20:48,031 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.default-dispatcher-2 - datasource [default] bound to JNDI as DefaultDS
+2016-06-29 10:20:48,031 [INFO] from play.api.db.DefaultDBApi in application-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost:5432/postgres
+2016-06-29 10:20:48,076 [WARN] from org.hibernate.ejb.HibernatePersistence in application-akka.actor.default-dispatcher-2 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:20:48,077 [WARN] from org.hibernate.ejb.HibernatePersistence in application-akka.actor.default-dispatcher-2 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:20:48,078 [WARN] from org.hibernate.ejb.HibernatePersistence in application-akka.actor.default-dispatcher-2 - HHH015016: Encountered a deprecated javax.persistence.spi.PersistenceProvider [org.hibernate.ejb.HibernatePersistence]; use [org.hibernate.jpa.HibernatePersistenceProvider] instead.
+2016-06-29 10:20:49,388 [INFO] from play.api.Play in application-akka.actor.default-dispatcher-2 - Application started (Dev)
+2016-06-29 10:20:49,426 [INFO] from application in application-akka.actor.default-dispatcher-9 - ***************** Hi Mahendra ***************************
+2016-06-29 10:20:49,440 [INFO] from application in application-akka.actor.default-dispatcher-9 - Got userDetail: 10 Mahendra Shinde 
