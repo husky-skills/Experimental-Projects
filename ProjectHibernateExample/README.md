@@ -1,4 +1,4 @@
-This is working example for playframework with Hibernate 
+﻿This is working example for playframework with Hibernate 
 
 This project uses -
 
