@@ -1,5 +1,5 @@
 
-name := """ProjectHibernateExample"""
+name := """MoreHibernateExample"""
 
 version := "1.0"
 
