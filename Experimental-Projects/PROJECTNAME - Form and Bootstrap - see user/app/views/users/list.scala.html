@@ -1,0 +1,28 @@
+@(users:List[User])
+
+@main("Users catalogue"){
+
+<h2>All Users</h2>
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Ean</th>
+<th>Name</th>
+<th>Email - id</th>
+</tr>
+</thead>
+<tbody>
+@for(user<-users){
+
+<tr>
+<td><a href="@routes.UserController.details(user.ean)">@user.ean</a></td>
+<td><a href="@routes.UserController.details(user.ean)">@user.name</a></td>
+<td><a href="@routes.UserController.details(user.ean)">@user.email</a></td>
+</tr>
+
+}
+
+</tbody>
+</table>
+}

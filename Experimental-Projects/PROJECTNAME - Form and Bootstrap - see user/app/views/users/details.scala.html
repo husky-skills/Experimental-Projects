@@ -1,0 +1,27 @@
+
+@(userForm: Form[User])
+@import helper._
+@import helper.twitterBootstrap._
+@main("User form") {
+<h1>User form</h1>
+@helper.form(action = routes.UserController.save()) {
+<fieldset>
+<legend>User(@userForm("name").valueOr("New"))</legend>
+@helper.inputText(userForm("ean"), '_label -> "EAN")
+@helper.inputText(userForm("name"),'_label -> "Name")
+@helper.textarea(userForm("email"), '_label -> "Email -id ")
+<div class="control-group">
+<div class="controls">
+<input name="tags[0].id" value="1" type="checkbox">lightweight
+<input name="tags[1].id" value="2" type="checkbox">metal
+<input name="tags[2].id" value="3" type="checkbox">plastic
+</div>
+</div>
+</fieldset>
+
+<input type="submit" class="btn btn-primary" value="Save">
+<a class="btn" href="@routes.UserController.list()">Cancel</a>
+}
+
+
+}
