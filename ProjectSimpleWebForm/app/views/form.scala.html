@@ -1,0 +1,18 @@
+@(stockForm: Form[Stock])(implicit messages: Messages)
+
+@import helper._
+
+@main("Add Stock") {
+<h2>Add a Stock</h2>
+
+@helper.form(action = routes.HomeController.save) {
+
+@inputText(stockForm("symbol"),'_label -> "Symbol")
+@inputText(stockForm("company"),'_label -> "Company")
+
+<div class="form-actions">
+    <input type="submit" value="Add Stock">
+    <a href="@routes.HomeController.index" >Cancel</a>
+</div>
+}
+}
